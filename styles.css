@@ -231,6 +231,7 @@ input[type="checkbox"]:checked:before {
   padding-left: 20px;
   padding-right: 20px;
   
+  
 }
   
 #features .feature-container {
@@ -264,6 +265,7 @@ input[type="checkbox"]:checked:before {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 80px;
 }
 
 #about .maincontainer {
@@ -313,24 +315,28 @@ input[type="checkbox"]:checked:before {
 }
 
 
-
 #About #carousel {
   color: rgb(255, 255, 255) !important;
   font-family: Menlo, Monaco, "Consolas", "Courier New", "Courier";
   font-size: 12pt !important;
   background: #30353A;
   border-radius: 0px 0px 8px 8px;
-  padding: 10px;
   box-sizing: border-box;
   height: 450px;
   box-shadow: 20px 20px #222529;
   overflow: hidden;
   display: flex;
   flex-direction: row;
+  padding-left: 10px;
 }
+#button_a:checked ~ #label_al {
+  background-color: #000000;
+}
+
 .frost {
   color:#81A1C1;
 }
+
 .slime {
   color:#A3BE8C;
 }
@@ -372,46 +378,59 @@ input[type="checkbox"]:checked:before {
   -webkit-transform: translateY(-300%);
   transform: translateY(-300%); 
 }
+
+
           
 [class^="panel_"] {
   overflow: auto;
   position: relative;
   width: inherit;
   height: inherit;
-  padding: 48px;
+  padding-top: 10px;
+  color: white;
 }
           
 #navigation {
-  padding-left: 50px;
+  padding-left: 70px;
+  margin-top: 70px;
+
 }
 
 [class^="label_"] {
   display: block;
   cursor: pointer;
-  margin: 8px 0;
-  width: 32px;
-  height: 32px;
+  margin: 20px 0;
+  width: 40px;
+  height: 40px;
   line-height: 32px;
   text-align: center;
   border-radius: 4px;
   color: #aaa;
-  background-color: #fff;
   transition: all 0.3s ease;
+  transform: translate(-50%, -50%) scale(1);
+  border-style: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 10%;
+  background-color: var(--colour-button);
+  box-shadow: -2px -7px 10px var(--button-shadow1), 4px 6px 10px var(--button-shadow2);
+  display: flex;
+  align-items:center;
+  justify-content:center;
 }
           
 [class^="label_"]:hover {
   color: #444;
-  background-color: #ffeed9;
+  background-color: #d1d1d1;
 }
-          
-#button_a:checked ~ #navigation .label_a,
-#button_b:checked ~ #navigation .label_b,
-#button_c:checked ~ #navigation .label_c,
-#button_d:checked ~ #navigation .label_d {
-   cursor: default;
-   color: #fff;
-   background-color: #222;
+
+[class^="label_"]:active {
+  box-shadow: -2px -7px 10px var(--button-shadow2), 4px 6px 10px var(--button-shadow1), inset -2px -7px 10px var(--button-shadow1), inset 4px 6px 10px var(--button-shadow2);
+  transition: all 0.3s;
+  transform: translate(-50%, -50%) scale(0.95);
 }
+}
+
 
 /* Fourth section */
 
@@ -420,11 +439,13 @@ input[type="checkbox"]:checked:before {
   padding-top: 20px;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
+
 }
 
 .price-description {
   font-size: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 .pricing-dotpoints {
@@ -464,60 +485,56 @@ input[type="checkbox"]:checked:before {
 
 /* Fifth section */
 #Contributors {
+  display: flex;
   flex-direction: column;
-  max-width: 1200px;
+  justify-content: center;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 50px;
   padding-right: 30px;
   padding-left: 30px;
-  
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
-.frame{
-  padding-top: 10px;
-  padding-bottom: 10px;
+.carousel {
+  position: relative;
+}
+
+.carousel__slider {
+  position: relative;
+  display: flex;
+  align-items: center;
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-   box-shadow: -2px -7px 10px var(--button-shadow1), 4px 6px 10px var(--button-shadow2);
-   border-radius: 10px;
+  border: 0px;
+  height: 200px;
 }
 
-.btn{
-  max-width: 140px;
-  flex: 12%;
-  height: 150px;
-  margin: 10px 10px 10px 10px;
-  border-radius: 3px;
-  background: var(--bg);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  -webkit-tap-highlight-color: transparent;
-  box-shadow: -2px -7px 10px var(--button-shadow1), 4px 6px 10px var(--button-shadow2);
-  font-size: 16px;
-  color: rgba(42, 52, 84, 1);
-  text-decoration: none;
-}
-.contributor-img {
-  width: 120px;
-  height: 100px;
+.carousel__list {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 
-.btn:active{
-  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
-              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
-    inset -4px -4px 6px 0 rgba(255,255,255,.5),
-    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+.carousel__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.carousel__item:hover {
+  transform: scale(1.05);  
 }
 
 
