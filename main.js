@@ -70,9 +70,6 @@ function carousel() {
 
   let a = setInterval(moveFirst, 10);
   let b = setInterval(moveSecond, 10);
-
-  carouselSlider.addEventListener("mouseenter", hover);
-  carouselSlider.addEventListener("mouseleave", unhover);
 }
 
 carousel();

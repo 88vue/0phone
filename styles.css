@@ -282,7 +282,6 @@ input[type="checkbox"]:checked:before {
   border-radius: 8px 8px 0 0;
   padding-left: 10px;
   width: 100%;
-  box-shadow: 20px 20px #b9c2ca;
 }
 
 #About header .button {
@@ -323,7 +322,6 @@ input[type="checkbox"]:checked:before {
   border-radius: 0px 0px 8px 8px;
   box-sizing: border-box;
   height: 450px;
-  box-shadow: 20px 20px #222529;
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -391,7 +389,7 @@ input[type="checkbox"]:checked:before {
 }
           
 #navigation {
-  padding-left: 70px;
+  padding-left: 50px;
   margin-top: 70px;
 
 }
@@ -428,7 +426,6 @@ input[type="checkbox"]:checked:before {
   box-shadow: -2px -7px 10px var(--button-shadow2), 4px 6px 10px var(--button-shadow1), inset -2px -7px 10px var(--button-shadow1), inset 4px 6px 10px var(--button-shadow2);
   transition: all 0.3s;
   transform: translate(-50%, -50%) scale(0.95);
-}
 }
 
 
@@ -511,6 +508,7 @@ ul {
   display: flex;
   align-items: center;
   width: 100%;
+  min-width: 1000px;
   border: 0px;
   height: 200px;
 }
